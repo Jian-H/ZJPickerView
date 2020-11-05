@@ -317,7 +317,8 @@ static const CGFloat canceBtnWidth = 68.0f; // cance button or sure button heigh
     
     // show
     if ([self sharedView].config.isAnimationShow) {
-        [[[[UIApplication sharedApplication] delegate] window] addSubview:[self sharedView]];
+        [[UIApplication sharedApplication].keyWindow addSubview:[self sharedView]];
+        //[[[[UIApplication sharedApplication] delegate] window] addSubview:[self sharedView]];
         
         [self sharedView].maskView.alpha = 0.0f;
         
@@ -333,7 +334,8 @@ static const CGFloat canceBtnWidth = 68.0f; // cance button or sure button heigh
         }];
     } else {
         [UIView animateWithDuration:0.3f animations:^{
-            [[[[UIApplication sharedApplication] delegate] window] addSubview:[self sharedView]];
+            [[UIApplication sharedApplication].keyWindow addSubview:[self sharedView]];
+            //[[[[UIApplication sharedApplication] delegate] window] addSubview:[self sharedView]];
         }];
     }
 }
